@@ -20,11 +20,11 @@ public class Main {
 	InvalidKeyException, 
 	BadPaddingException,
 	IllegalBlockSizeException { 
-		System.out.println("Приклад реалізації  алгоритму шифрування");
+		System.out.println("An example of implementing an encryption algorithm");
 		System.out.println("AES");
-		System.out.println("На основі 128 бітного рандомного ключа ");
+		System.out.println("Based on a 128 bit random key ");
 		System.out.println("-----------------------");
-		System.out.println("введіть слово для шифрування");
+		System.out.println("enter the word for encryption");
 		Scanner sc = new Scanner(System.in);
 		
 		String s = sc.next();
@@ -38,7 +38,7 @@ public class Main {
 		
 		cipher.init(Cipher.ENCRYPT_MODE, key); 
 		
-		System.out.println("Результат шифрування: ");
+		System.out.println("The result of encryption: ");
 		byte[] bytes = cipher.doFinal(s.getBytes());
 		for(byte b : bytes){
 			
@@ -46,7 +46,7 @@ public class Main {
 			
 		}
 		System.out.println();
-	System.out.print("Дешифрований текст: ");
+	System.out.print("Decryption text: ");
 		Cipher deсriptCipher = Cipher.getInstance("AES");
 		
 		deсriptCipher.init(Cipher.DECRYPT_MODE, key);
